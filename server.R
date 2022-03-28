@@ -19,9 +19,9 @@ server = function(input , output , session){
   options(shiny.maxRequestSize = 3e2*1024^2)
   #options(shiny.sanitize.errors = F)
   
-  #observeEvent(input$resetData, {
-   # js$reset()
-  #})
+  observeEvent(input$resetData, {
+    js$reset()
+  })
   
   observeEvent(input$quit, {
     js$closeWindow()
