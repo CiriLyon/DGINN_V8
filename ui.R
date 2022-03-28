@@ -11,14 +11,14 @@ library(openxlsx)
 library(V8)
 
 
-#jsResetCode <- "shinyjs.reset = function() {history.go(0)}"
+jsResetCode <- "shinyjs.reset = function() {history.go(0)}"
 jscloseW    <- "shinyjs.closeWindow = function() { window.close(); }"
 
 
 ui = fluidPage(
   titlePanel("DGINN additional GUI"),
   useShinyjs(),                                           # Include shinyjs in the UI
- # extendShinyjs(text = jsResetCode, functions = c("reset")), 
+  extendShinyjs(text = jsResetCode, functions = c("reset")), 
   extendShinyjs(text = jscloseW , functions = c("closeWindow")),
   
   
